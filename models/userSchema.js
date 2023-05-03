@@ -80,4 +80,4 @@ userSchema.methods.addcartdata = async function (cart) {
 const USER = new mongoose.model("USER", userSchema);
 
 module.exports = USER;
-console.log(keysecret);
+// console.log(keysecret);
