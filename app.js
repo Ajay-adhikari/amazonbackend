@@ -16,7 +16,7 @@ app.use(cookieParser(""));
 
 app.use(router);
 app.use(cors({
-  origin:"*",
+  origin:"https://gleeful-toffee-40719d.netlify.app",
   credentials:true
 
 }));
