@@ -15,19 +15,19 @@ app.use(express.json());
 app.use(cookieParser(""));
 
 app.use(router);
-app.use(cors({
-  origin:"https://gleeful-toffee-40719d.netlify.app",
-  credentials:true
+// app.use(cors({
+//   origin:"https://gleeful-toffee-40719d.netlify.app",
+//   credentials:true
 
-}));
-app.use(router);
+// }));
+
 const port=process.env.PORT || 8005;
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Credentials", true);
-//     res.header("Access-Control-Allow-Headers", "origin, X-Requested-With, Content-Type, Accept");
-//     next();
-//   });
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header("Access-Control-Allow-Headers", "origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 
 
