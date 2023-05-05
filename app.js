@@ -13,6 +13,8 @@ const cookieParser = require("cookie-parser");
 
 app.use(express.json());
 app.use(cookieParser(""));
+
+app.use(router);
 app.use(cors({
   origin:"*",
   credentials:true
