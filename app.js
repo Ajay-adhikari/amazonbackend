@@ -14,6 +14,8 @@ const cookieParser = require("cookie-parser");
 app.use(express.json());
 app.use(cookieParser(""));
 // app.use(cors());
+const cors = require('cors');
+const whitelist = ['https://stellar-treacle-3bd297.netlify.app'];
 const corsOptions = {
     origin: function (origin, callback) {
       if (whitelist.indexOf(origin) !== -1) {
