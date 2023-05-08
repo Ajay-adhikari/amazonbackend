@@ -11,7 +11,20 @@ const cookieParser = require("cookie-parser");
 
 app.use(express.json());
 app.use(cookieParser(""));
-app.use(cors());
+
+
+const whitelist = ['http://localhost:3000', 'http://localhost:80'];
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 app.use(router);
 
