@@ -13,9 +13,7 @@ const cookieParser = require("cookie-parser");
 
 app.use(express.json());
 app.use(cookieParser(""));
-app.use(cors({
-    origin: 'https://bucolic-crumble-3245a8.netlify.app'
-  }));
+app.use();
 
 
 app.use(router);
