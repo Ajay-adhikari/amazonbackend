@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser(""));
 
 
-const whitelist = ['http://localhost:3000', 'http://localhost:80'];
+const whitelist = ['http://localhost:3000', 'https://ajayproject.netlify.app'];
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1) {
