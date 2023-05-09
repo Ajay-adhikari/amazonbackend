@@ -94,10 +94,10 @@ router.post("/login", async (req, res) => {
       console.log(token);
       res.cookie("Amazonweb", token, {
         
-        path: '/',
+        
         expires: new Date(Date.now() + 86400000), // 24 hours from now
         httpOnly: true,
-        secure: true
+        
       });
       res.status(201).json(userlogin);
     }}
