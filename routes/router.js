@@ -88,26 +88,23 @@ router.post("/login", async (req, res) => {
 
       if (!ismatch) {
         res.status(400).json({ error: "invalid details" });
-      } 
-    else {
-      const token = await userlogin.generateAuthtoken();
-      console.log(token);
-      res.cookie("Amazonweb", token, {
-        
-        
-        expires: new Date(Date.now() + 86400000), // 24 hours from now
-        httpOnly: true,
-        sameSite: 'strict'
-        
-      });
-      res.status(201).json(userlogin);
-    }}
-      else{
-
-        res.status(400).json({ error: "invalid details" });
+      } else {
+        const token = await userlogin.generateAuthtoken();
+        console.log(token);
+        res.cookie("Amazonweb", token, {
+          domain: ["localhost", "ajayproject.netlify.app"],
+          path: "/",
+          expires: new Date(Date.now() + 86400000), // 24 hours from now
+          httpOnly: true,
+          secure: true,
+          sameSite: "strict",
+        });
+        res.status(201).json(userlogin);
       }
+    } else {
+      res.status(400).json({ error: "invalid details" });
     }
-  catch (e) {
+  } catch (e) {
     res.status(400).json({ error: "invalid details" });
   }
 });
