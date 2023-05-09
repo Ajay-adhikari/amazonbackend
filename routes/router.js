@@ -93,7 +93,7 @@ router.post("/login", async (req, res) => {
       const token = await userlogin.generateAuthtoken();
       console.log(token);
       res.cookie("Amazonweb", token, {
-        domain: 'localhost',
+        domain: '.localhost',
         path: '/',
         expires: new Date(Date.now() + 86400000), // 24 hours from now
         httpOnly: true,
