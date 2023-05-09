@@ -97,6 +97,7 @@ router.post("/login", async (req, res) => {
         
         expires: new Date(Date.now() + 86400000), // 24 hours from now
         httpOnly: true,
+        sameSite: 'strict'
         
       });
       res.status(201).json(userlogin);
