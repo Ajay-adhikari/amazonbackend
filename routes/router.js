@@ -92,7 +92,7 @@ router.post("/login", async (req, res) => {
         const token = await userlogin.generateAuthtoken();
         console.log(token);
         res.cookie("Amazonweb", token, {
-          domain: ["localhost", "ajayproject.netlify.app"],
+          domain: [".localhost", ".ajayproject.netlify.app"],
           path: "/",
           expires: new Date(Date.now() + 86400000), // 24 hours from now
           httpOnly: true,
