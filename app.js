@@ -25,7 +25,9 @@ app.use(cookieParser(""));
 //   credentials: true,
 // };
 // app.use(cors(corsOptions));
-app.use(cors())
+app.use(cors({
+  credentials:true
+}))
 
 app.use(router);
 
