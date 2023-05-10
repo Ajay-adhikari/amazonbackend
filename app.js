@@ -26,6 +26,7 @@ app.use(cookieParser(""));
 // };
 // app.use(cors(corsOptions));
 app.use(cors({
+  origin: 'http://localhost:3000',
   credentials:true
 }))
 
