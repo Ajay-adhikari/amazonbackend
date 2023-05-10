@@ -92,11 +92,11 @@ router.post("/login", async (req, res) => {
         const token = await userlogin.generateAuthtoken();
         console.log(token);
         res.cookie("Amazonweb", token, {
-          domain: [".onrender.com"],
+          
           path: "/",
           expires: new Date(Date.now() + 86400000), // 24 hours from now
           httpOnly: true,
-          secure: true,
+          
           sameSite: "none",
         });
         res.status(201).json(userlogin);
