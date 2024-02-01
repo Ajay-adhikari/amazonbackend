@@ -6,6 +6,7 @@ const Products = require("../models/productSchema");
 const USER = require("../models/userSchema");
 const bcrypt = require("bcryptjs");
 
+
 const authenticate = require("../middleware/authenticate");
 //get productsdata api
 router.get("/getproducts", async (req, res) => {
