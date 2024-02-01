@@ -1,3 +1,4 @@
+
 const products = [
     { 
         id: 'product1',
